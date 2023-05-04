@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信箱格式檢查</title>
+</head>
+
+<body>
+    <label>請輸入Email:</label>
+    <input type="text" id="address" />
+    <input type="button" id="btn" value="檢查" onclick="check();" />
+    <script>
+
+        function check() {
+            const emailAddress = document.getElementById('address').value
+            console.log(emailAddress)
+            let rex = /^\w+@{1,1}\w+\.\w+$/
+            if (rex.test(emailAddress)) {
+                console.log(emailAddress)
+                alert('信箱格式正確')
+            }
+            else {
+                console.log(emailAddress)
+                alert('信箱格式錯誤，請確認包含@和.且@不重複')
+            }
+        }
+    </script>
+
+</body>
+
+</html>

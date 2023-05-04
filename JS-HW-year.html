@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>判斷閏年</title>
+</head>
+
+<body>
+    <label for="box-year">請輸入欲查詢的西元年份：</label>
+    <input type="text" id="box-year" name="year" value="" autofocus>
+    <input type="button" id="button1" value="計算">
+
+    <div>查詢結果：
+        <span id="result"></span>
+    </div>
+    <script>
+        let year = document.getElementById('box-year');
+        let button = document.getElementById('button1')
+        let result = document.getElementById('result');
+        button.addEventListener('click', function () {
+            if (year.value % 400 == 0 || (year.value % 4 == 0 && year.value % 100 != 0)) {
+
+                result.innerHTML = "閏年"
+
+            }
+            else {
+                result.innerHTML = "平年"
+
+            }
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九九乘法表</title>
+    <style>
+        #title {
+            width: 80%;
+            margin: auto;
+            margin-top: 40px;
+            background-color: #F2B705;
+
+        }
+
+        h2 {
+            text-align: center;
+
+        }
+
+        table {
+            width: 80%;
+            border: 6px double #F29F05;
+            background-color: #6C6F73;
+            color: #F2F2F2;
+            margin: auto;
+            margin-top: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            /* border-collapse: collapse; */
+
+        }
+
+        td {
+            border-right: 1px dashed #F2B705;
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='title'>
+        <h2>九九乘法表</h2>
+    </div>
+
+    <script>
+        document.write('<table>')
+        let i, j, cul;
+        for (i = 1; i <= 9; i++) {
+            document.write('<tr>')
+            for (j = 1; j <= 9; j++) {
+
+                cul = i * j;
+                let box = `${i} * ${j} = ${cul}`;
+                document.write(`<td>${box}</td>`)
+
+
+            }
+            document.write('</tr>')
+
+        }
+        document.write('</table>')
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>計算年齡</title>
+</head>
+
+<body>
+    <p>請選擇出生年月日：</p>
+    <input type="date" id="birthday" value="2000-01-04">
+    <input type="button" id="calOld" name="calOld" value="計算年紀" onclick="yearOld()">
+    <div>
+        <span>您的年齡是：</span>
+        <span id="yearOld"></span>
+    </div>
+
+    <script>
+        nowday = new Date()
+        // console.log(`今天日期${nowday}`)
+        const nowYear = nowday.getFullYear()
+        const nowMonth = nowday.getMonth() + 1
+        const nowDate = nowday.getDate()
+
+        function yearOld() {
+            const birthDay = new Date(document.getElementById("birthday").value)
+            // console.log(`生日日期${birthDay}`)
+            const birthYear = birthDay.getFullYear()
+            // console.log(birthYear)
+            const birthMonth = birthDay.getMonth() + 1
+            // console.log(birtMonth)
+            const birthDate = birthDay.getDate()
+
+            let yearOld
+            if (birthMonth < nowMonth) {
+                yearOld = nowYear - birthYear
+                // console.log(`真實年齡${yearOld}`)
+
+
+            }
+            else if (birthMonth == nowMonth) {
+                if (birthDate <= nowDate) {
+                    yearOld = nowYear - birthYear
+                    // console.log(`真實年齡${yearOld}`)
+                }
+                else {
+                    yearOld = nowYear - birthYear - 1
+                    // console.log(`減一年齡${yearOld}`)
+                }
+            }
+            else {
+                yearOld = nowYear - birthYear - 1
+                // console.log(`減一年齡${yearOld}`)
+
+            }
+            document.getElementById("yearOld").innerHTML = `${yearOld}歲`
+
+        }
+
+    </script>
+
+</body>
+
+</html>

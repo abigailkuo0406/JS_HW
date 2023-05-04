@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>溫度轉換</title>
+
+</head>
+
+<body>
+    <div>
+        <label for="temCinput">攝氏溫度：</label>
+        <input type="text" id="temCinput" name="temCinput" placeholder="請輸入...">
+        <input type="button" id="cal1" name="cal1" value="轉換" onclick="cal1()">
+        <span>華氏溫度：</span>
+        <span id="result1"></span>
+
+
+    </div>
+
+    <div>
+        <label for="temCinput">華氏溫度：</label>
+        <input type="text" id="temFinput" name="temFinput" placeholder="請輸入...">
+        <input type="button" id="cal2" name="cal1" value="轉換" onclick="cal2()">
+        <span>攝氏溫度：</span>
+        <span id="result2"></span>
+
+
+    </div>
+
+
+    <script>
+        temC = document.getElementById('temCinput')
+        temF = document.getElementById('temFinput')
+        result1 = document.getElementById('result1')
+        result2 = document.getElementById('result2')
+        function cal1() {
+
+            let temCresult = temC.value * 9 / 5 + 32
+            result1.innerHTML = temCresult
+
+        }
+        function cal2() {
+
+            let temFresult = (temF.value - 32) * 5 / 9
+            result2.innerHTML = temFresult
+
+        }
+
+
+    </script>
+</body>
+
+</html>

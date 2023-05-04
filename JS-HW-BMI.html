@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI計算</title>
+
+</head>
+
+<body>
+    <!-- 製作身高輸入欄位 -->
+    <label for="height">身高(cm)：</label>
+    <input type="text" id="height" name="height" value="" autofocus>
+    <!-- 製作體重輸入欄位 -->
+    <label for="weight">體重(kg)：</label>
+    <input type="text" name="weight" id="weight" value="">
+
+    <!-- 製作送出按鈕 -->
+    <input type="button" name="cul" id="cul" value="計算BMI">
+    <!-- 製作結果輸出 -->
+    <div>
+        BMI結果：
+        <span ID="result"></span>
+    </div>
+    <script>
+        // 定義要輸入的變數
+        let h = document.getElementById('height')
+        let w = document.getElementById('weight')
+
+        // 定義要輸出結果的區塊
+        let result = document.getElementById('result')
+
+        // 定義按鈕變數
+        let cul = document.getElementById('cul')
+
+        // 運算並輸出結果
+        cul.addEventListener('click', function () {
+            let BMI = w.value / ((h.value / 100) ** 2);
+            // let BMI = w.value / (h.value ** 2)
+            // result.innerHTML = BMI;
+            if (BMI < 18.5) {
+                result.innerHTML = `${BMI},體重過輕`
+            }
+            else if (BMI < 24) {
+                result.innerHTML = `${BMI},體重正常`
+            }
+            else if (BMI < 27) {
+                result.innerHTML = `${BMI},體重過重`
+            }
+            else if (BMI < 30) {
+                result.innerHTML = `${BMI},輕度肥胖`
+            }
+            else if (BMI < 35) {
+                result.innerHTML = `${BMI},中度肥胖`
+            }
+            else {
+                result.innerHTML = `${BMI},重度肥胖`
+            }
+
+        })
+
+
+    </script>
+
+
+</body>
+
+</html>
